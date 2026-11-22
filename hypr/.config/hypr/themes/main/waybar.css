@@ -1,0 +1,112 @@
+@define-color base rgba(13, 16, 23, 0.92);
+@define-color surface_hover rgba(43, 48, 64, 0.98);
+@define-color border rgba(216, 199, 255, 0.18);
+@define-color text #e8eaf2;
+@define-color muted #9ca3b8;
+@define-color lavender #d8c7ff;
+@define-color cyan #76e3d4;
+@define-color yellow #f2cc8f;
+@define-color red #ff7b8b;
+
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    font-family: "FantasqueSansM Nerd Font", "Noto Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+window#waybar { background: transparent; color: @text; }
+
+.modules-left, .modules-center, .modules-right {
+    background: @base;
+    border: 1px solid @border;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.32);
+}
+.modules-left { padding: 3px 7px 3px 3px; }
+.modules-center { padding: 3px; }
+.modules-right { padding: 3px 3px 3px 7px; }
+
+tooltip {
+    background: rgba(18, 21, 30, 0.98);
+    border: 1px solid rgba(216, 199, 255, 0.28);
+    border-radius: 12px;
+}
+tooltip label { color: @text; padding: 7px 9px; }
+
+#custom-launcher, #custom-power {
+    min-width: 34px;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: all 180ms ease;
+}
+#custom-launcher {
+    margin-right: 7px;
+    padding: 0 6px 0 0;
+    background: @lavender;
+    color: #17121f;
+}
+#custom-power { margin-left: 6px; background: rgba(255, 123, 139, 0.13); color: @red; }
+#custom-launcher:hover { background: @cyan; }
+#custom-power:hover { background: @red; color: #1b1013; }
+
+#workspaces { padding: 0 2px; }
+#workspaces button {
+    min-width: 34px;
+    padding: 0;
+    margin: 0 2px;
+    color: #6f768b;
+    border-radius: 9px;
+    transition: all 180ms ease;
+}
+#workspaces .workspace-label { padding: 0; margin: 0; }
+#workspaces button:hover { background: @surface_hover; color: @text; box-shadow: none; }
+#workspaces button.visible { color: @muted; }
+#workspaces button.active {
+    min-width: 34px;
+    background-color: @lavender;
+    color: #17121f;
+}
+#workspaces button.urgent { background: @red; color: #1b1013; }
+#workspaces button.empty { color: #555d73; }
+#workspaces button.empty:hover { background: @surface_hover; }
+
+/* Hyprland marks workspaces belonging to this bar's monitor as
+ * .hosting-monitor. The rest get a small, non-layout-affecting star. */
+#workspaces button:not(.hosting-monitor) {
+    background-image: url("workspace-remote.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 34px 34px;
+}
+
+#window { margin-left: 8px; padding: 0 10px; color: @muted; }
+window#waybar.empty #window { color: #737a90; }
+#clock { padding: 0 13px; color: @text; letter-spacing: 0.3px; border-radius: 9px; }
+
+#tray, #cpu, #memory, #network, #bluetooth, #pulseaudio,
+#backlight, #battery, #language, #idle_inhibitor {
+    padding: 0 8px;
+    margin: 0 1px;
+    border-radius: 9px;
+    color: @muted;
+    transition: all 180ms ease;
+}
+#tray { padding-left: 9px; padding-right: 9px; }
+#cpu, #memory { color: @cyan; }
+#network, #bluetooth, #pulseaudio, #backlight { color: @lavender; }
+#battery, #language, #idle_inhibitor { color: @text; }
+
+#cpu:hover, #memory:hover, #network:hover, #bluetooth:hover,
+#pulseaudio:hover, #backlight:hover, #battery:hover, #language:hover,
+#idle_inhibitor:hover, #clock:hover { background: @surface_hover; color: @text; }
+
+#pulseaudio.muted, #network.disconnected, #bluetooth.disabled, #bluetooth.off { color: #72798e; }
+#battery.charging, #battery.plugged { color: @cyan; }
+#battery.warning:not(.charging) { color: @yellow; }
+#battery.critical:not(.charging) { color: @red; background: rgba(255, 123, 139, 0.12); }
+#idle_inhibitor.activated { color: @yellow; background: rgba(242, 204, 143, 0.10); }
+#idle_inhibitor { min-width: 34px; padding: 0; }
+#language { min-width: 20px; color: @cyan; }

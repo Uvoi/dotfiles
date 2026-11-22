@@ -1,0 +1,98 @@
+@define-color base rgba(13, 16, 23, 0.96);
+@define-color surface rgba(28, 32, 44, 0.92);
+@define-color surface_hover rgba(43, 48, 64, 0.96);
+@define-color border rgba(216, 199, 255, 0.22);
+@define-color text #e8eaf2;
+@define-color muted #9ca3b8;
+@define-color lavender #d8c7ff;
+@define-color cyan #76e3d4;
+
+* {
+    font-family: "FantasqueSansM Nerd Font", "Noto Sans", sans-serif;
+    font-size: 15px;
+    outline: none;
+}
+
+window {
+    margin: 0;
+    padding: 0;
+    color: @text;
+    background-color: @base;
+    border: 1px solid @border;
+    border-radius: 20px;
+}
+
+#outer-box {
+    margin: 0;
+    padding: 18px;
+    background-color: transparent;
+}
+
+#input {
+    margin: 0 6px 14px 6px;
+    padding: 12px 16px;
+    color: @text;
+    caret-color: @cyan;
+    background-color: @surface;
+    border: 1px solid @border;
+    border-radius: 13px;
+}
+
+#input:focus {
+    border-color: rgba(118, 227, 212, 0.62);
+    box-shadow: 0 0 0 1px rgba(118, 227, 212, 0.14);
+}
+
+#scroll {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+#inner-box {
+    margin: 0;
+    padding: 2px 0;
+    background-color: transparent;
+}
+
+#entry {
+    min-height: 44px;
+    margin: 4px 6px;
+    padding: 9px 12px;
+    color: @text;
+    background-color: rgba(28, 32, 44, 0.72);
+    border: 1px solid rgba(216, 199, 255, 0.08);
+    border-radius: 12px;
+}
+
+#entry:hover {
+    background-color: @surface_hover;
+    border-color: rgba(216, 199, 255, 0.18);
+}
+
+#entry:selected {
+    color: #17121f;
+    background: linear-gradient(135deg, @lavender, #bba4f4);
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+#img {
+    margin: 0 12px 0 2px;
+    padding: 0;
+}
+
+#text {
+    margin: 0;
+    padding: 0;
+    color: @text;
+}
+
+#text:selected {
+    color: #17121f;
+    font-weight: 700;
+}
+
+#expander-box {
+    background-color: transparent;
+}

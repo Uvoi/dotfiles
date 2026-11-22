@@ -1,0 +1,6 @@
+// User-owned binds loaded after the auto-generated DMS binds.
+binds {
+    Mod+Space hotkey-overlay-title="Application Launcher" {
+        spawn "dms" "ipc" "call" "spotlight" "toggle";
+    }
+}

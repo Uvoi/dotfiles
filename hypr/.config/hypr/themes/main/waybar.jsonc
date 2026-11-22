@@ -1,0 +1,154 @@
+{
+    "name": "boba-glass",
+    "position": "top",
+    "layer": "top",
+    "height": 42,
+    "margin-top": 8,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 6,
+    "reload_style_on_change": true,
+
+    "modules-left": ["custom/launcher", "hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "tray", "cpu", "memory", "network", "bluetooth", "pulseaudio",
+        "backlight", "battery", "hyprland/language", "idle_inhibitor", "custom/power"
+    ],
+
+    "custom/launcher": {
+        "format": "󰣇",
+        "tooltip-format": "Приложения  •  Super + Space",
+        "on-click": "wofi --show drun -I -c ~/.config/hypr/themes/main/wofi.conf -s ~/.config/hypr/themes/main/wofi.css"
+    },
+    "hyprland/workspaces": {
+        "format": "<span size='large'>{windows}</span><span rise='-6500' size='xx-small' alpha='65%'>{id}</span>",
+        "format-window-separator": "  ",
+        "window-rewrite-default": "󰘔",
+        "window-rewrite": {
+            "class<kitty>": "󰄛",
+            "class<Alacritty>": "󰄛",
+            "class<foot>": "󰄛",
+            "class<com.microsoft.VSCode>": "󰨞",
+            "class<Code>": "󰨞",
+            "class<code-oss>": "󰨞",
+            "class<Cursor>": "󰨞",
+            "class<zed>": "󰵁",
+            "class<firefox>": "󰈹",
+            "class<zen>": "󰖟",
+            "class<zen-browser>": "󰖟",
+            "class<chromium>": "󰊯",
+            "class<Google-chrome>": "󰊯",
+            "class<thunar>": "󰉋",
+            "class<org.gnome.Nautilus>": "󰉋",
+            "class<com.ayugram.desktop>": "󰔁",
+            "class<org.telegram.desktop>": "󰔁",
+            "class<discord>": "󰙯",
+            "class<Slack>": "󰒱",
+            "class<YandexMusic>": "󰎈",
+            "class<spotify>": "󰓇",
+            "class<steam>": "󰓓",
+            "class<org.qbittorrent.qBittorrent>": "󰇚",
+            "class<mpv>": "󰐹",
+            "class<vlc>": "󰕼",
+            "class<obsidian>": "󱞁",
+            "class<figma-linux>": "󰙏",
+            "class<org.gimp.GIMP>": "󰏘",
+            "class<Happ>": "󰖂",
+            "class<org.remmina.Remmina>": "󰢹",
+            "title<.*YouTube.*>": "󰗃"
+        },
+        "persistent-workspaces": {"*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]},
+        "all-outputs": true,
+        "unique-icons": true,
+        "max-windows": 5,
+        "tooltip": true,
+        "tooltips": {
+            "default": "Рабочий стол {name}\n{windows}",
+            "empty": "Рабочий стол {name} — пусто"
+        },
+        "on-click": "activate",
+        "sort-by": "number"
+    },
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 42,
+        "separate-outputs": true,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "$1",
+            "(.*) - Chromium": "$1",
+            "(.*) - Visual Studio Code": "$1",
+            "": "Рабочий стол"
+        }
+    },
+    "clock": {
+        "format": "{:%H:%M  <span foreground='#8b91a7'>•</span>  %a, %d %b}",
+        "format-alt": "{:%A, %d %B %Y  •  %H:%M}",
+        "interval": 60,
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>"
+    },
+    "tray": {"icon-size": 17, "spacing": 8},
+    "cpu": {
+        "interval": 10, "format": "󰻠 {usage}%", "tooltip": true,
+        "on-click": "missioncenter"
+    },
+    "memory": {
+        "interval": 10, "format": "󰍛 {percentage}%",
+        "tooltip-format": "Оперативная память: {used:0.1f} / {total:0.1f} GiB",
+        "on-click": "missioncenter"
+    },
+    "network": {
+        "interval": 5,
+        "format-wifi": "󰤨  {essid}",
+        "format-ethernet": "󰈀  Ethernet",
+        "format-linked": "󰈀  {ifname}",
+        "format-disconnected": "󰤭  Нет сети",
+        "tooltip-format-wifi": "{essid}\nСигнал: {signalStrength}%\nIP: {ipaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
+        "tooltip-format-ethernet": "{ifname}\nIP: {ipaddr}\n↓ {bandwidthDownBytes}  ↑ {bandwidthUpBytes}",
+        "on-click": "kitty --title nmtui --config ~/.config/kitty/kitty_mini.conf -e nmtui",
+        "max-length": 22
+    },
+    "bluetooth": {
+        "format": "󰂯", "format-connected": "󰂱 {num_connections}",
+        "format-disabled": "󰂲", "format-off": "󰂲", "format-no-controller": "",
+        "tooltip-format": "Bluetooth: {status}",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "on-click": "blueman-manager"
+    },
+    "pulseaudio": {
+        "scroll-step": 2,
+        "format": "{icon} {volume}%", "format-muted": "󰖁  Без звука",
+        "format-bluetooth": "󰂰 {volume}%",
+        "format-icons": {
+            "headphone": "󰋋", "headset": "󰋎",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "tooltip-format": "{desc}\nГромкость: {volume}%",
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "backlight": {
+        "format": "{icon} {percent}%", "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-scroll-up": "brightnessctl set 5%+", "on-scroll-down": "brightnessctl set 5%-"
+    },
+    "battery": {
+        "interval": 20,
+        "states": {"warning": 30, "critical": 15},
+        "format": "{icon} {capacity}%", "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%", "format-full": "󰁹 {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{timeTo}\nЭнергопотребление: {power:.1f} W"
+    },
+    "hyprland/language": {"format": "{short}", "tooltip-format": "Раскладка: {long}"},
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {"activated": "󰒳", "deactivated": "󰒲"},
+        "tooltip-format-activated": "Автосон отключён",
+        "tooltip-format-deactivated": "Автосон включён"
+    },
+    "custom/power": {
+        "format": "󰐥", "tooltip-format": "Питание  •  Super + Backspace",
+        "on-click": "wlogout"
+    }
+}

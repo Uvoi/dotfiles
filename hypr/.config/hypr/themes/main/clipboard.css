@@ -1,0 +1,129 @@
+@define-color glass rgba(13, 17, 25, 0.62);
+@define-color surface rgba(29, 35, 48, 0.48);
+@define-color surface_hover rgba(45, 53, 70, 0.62);
+@define-color border rgba(157, 219, 208, 0.28);
+@define-color border_soft rgba(184, 166, 232, 0.14);
+@define-color text #edf1f7;
+@define-color muted #a8b0c0;
+@define-color cyan #9ddbd0;
+@define-color lavender #b8a6e8;
+
+* {
+    font-family: "FantasqueSansM Nerd Font", "Noto Sans", sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+
+window {
+    margin: 0;
+    padding: 0;
+    color: @text;
+    background-color: @glass;
+    border: 1px solid @border;
+    border-radius: 18px;
+}
+
+#outer-box {
+    margin: 0;
+    padding: 16px;
+    background-color: transparent;
+}
+
+#input {
+    margin: 0 2px 12px 2px;
+    padding: 11px 14px;
+    color: @text;
+    caret-color: @cyan;
+    background-color: rgba(30, 36, 49, 0.54);
+    border: 1px solid @border_soft;
+    border-radius: 12px;
+}
+
+#input:focus {
+    border-color: rgba(157, 219, 208, 0.55);
+    box-shadow: 0 0 0 1px rgba(184, 166, 232, 0.10);
+}
+
+#scroll,
+#inner-box {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+#entry {
+    min-height: 38px;
+    margin: 3px 2px;
+    padding: 8px 12px;
+    color: @text;
+    background-color: @surface;
+    border: 1px solid rgba(184, 166, 232, 0.07);
+    border-radius: 10px;
+}
+
+#entry:hover {
+    background-color: @surface_hover;
+    border-color: rgba(157, 219, 208, 0.18);
+}
+
+#entry:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#entry:selected {
+    color: #151922;
+    background: linear-gradient(100deg, rgba(157, 219, 208, 0.76), rgba(184, 166, 232, 0.70));
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+#text,
+#text:hover,
+#text:focus,
+#entry label,
+#entry label:hover,
+#entry label:focus {
+    margin: 0;
+    padding: 0;
+    color: @text;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+}
+
+#text:selected {
+    color: #151922;
+    font-weight: 700;
+}
+
+#img {
+    margin: 0 10px 0 0;
+    padding: 0;
+}
+
+#expander-box,
+#expander-box:hover,
+#expander-box:focus {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+scrollbar,
+scrollbar trough,
+scrollbar slider {
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    background-color: transparent;
+    border: none;
+}

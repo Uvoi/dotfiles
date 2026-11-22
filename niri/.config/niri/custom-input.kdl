@@ -1,0 +1,9 @@
+// Custom keyboard settings loaded after the auto-generated DMS input config.
+input {
+    keyboard {
+        xkb {
+            layout "us,ru"
+            options "grp:ctrl_space_toggle"
+        }
+    }
+}
