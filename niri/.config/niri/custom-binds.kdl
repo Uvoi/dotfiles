@@ -9,4 +9,10 @@ binds {
     Mod+Shift+S repeat=false hotkey-overlay-title="Move Window to Workspace 11" {
         move-window-to-workspace 11;
     }
+    Mod+Tab repeat=false hotkey-overlay-title="Focus Next Monitor" {
+        focus-monitor-next;
+    }
+    Mod+Shift+Tab repeat=false hotkey-overlay-title="Move Window to Next Monitor" {
+        move-window-to-monitor-next;
+    }
 }
