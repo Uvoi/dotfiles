@@ -16,10 +16,18 @@ are intentionally excluded.
 
 ## Installation
 
-Clone the repository into your home directory, review the configuration and run:
+Clone the repository into your home directory, review the configuration and run
+the interactive installer:
 
 ```bash
 ./install.sh
+```
+
+You can also select packages directly or install everything:
+
+```bash
+./install.sh niri fish kitty
+./install.sh all
 ```
 
 The installer creates per-file symbolic links into `$HOME`. Existing files are
