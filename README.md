@@ -37,9 +37,10 @@ links are created.
 After installation:
 
 1. Adjust monitor names and modes in `hypr/.config/hypr/conf/monitors.lua`.
-2. Set wallpaper paths in `hyprlock.conf` and `hyprpaper.conf`.
-3. Start DMS once so it can generate its compositor integration files.
-4. Validate Niri with `niri validate`.
+2. Adjust the Niri output names in `niri/.config/niri/custom-workspaces.kdl`.
+3. Set wallpaper paths in `hyprlock.conf` and `hyprpaper.conf`.
+4. Start DMS once so it can generate its compositor integration files.
+5. Validate Niri with `niri validate`.
 
 ## Notes
 

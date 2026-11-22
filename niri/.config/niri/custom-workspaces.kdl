@@ -1,11 +1,23 @@
-// Persistent workspaces. Unlike dynamic workspaces, these remain available when empty.
-workspace "1"
-workspace "2"
-workspace "3"
-workspace "4"
-workspace "5"
-workspace "6"
-workspace "7"
-workspace "8"
-workspace "9"
-workspace "10"
+// Ten persistent workspaces per output. Names are globally unique in niri,
+// while numeric key bindings address the focused output by local index.
+workspace "laptop-1" { open-on-output "eDP-1"; }
+workspace "laptop-2" { open-on-output "eDP-1"; }
+workspace "laptop-3" { open-on-output "eDP-1"; }
+workspace "laptop-4" { open-on-output "eDP-1"; }
+workspace "laptop-5" { open-on-output "eDP-1"; }
+workspace "laptop-6" { open-on-output "eDP-1"; }
+workspace "laptop-7" { open-on-output "eDP-1"; }
+workspace "laptop-8" { open-on-output "eDP-1"; }
+workspace "laptop-9" { open-on-output "eDP-1"; }
+workspace "laptop-10" { open-on-output "eDP-1"; }
+
+workspace "external-1" { open-on-output "HDMI-A-1"; }
+workspace "external-2" { open-on-output "HDMI-A-1"; }
+workspace "external-3" { open-on-output "HDMI-A-1"; }
+workspace "external-4" { open-on-output "HDMI-A-1"; }
+workspace "external-5" { open-on-output "HDMI-A-1"; }
+workspace "external-6" { open-on-output "HDMI-A-1"; }
+workspace "external-7" { open-on-output "HDMI-A-1"; }
+workspace "external-8" { open-on-output "HDMI-A-1"; }
+workspace "external-9" { open-on-output "HDMI-A-1"; }
+workspace "external-10" { open-on-output "HDMI-A-1"; }
