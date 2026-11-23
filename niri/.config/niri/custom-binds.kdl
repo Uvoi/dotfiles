@@ -16,7 +16,7 @@ binds {
         spawn "dms" "ipc" "call" "spotlight" "toggle";
     }
     Mod+S repeat=false hotkey-overlay-title="Workspace 11" {
-        focus-workspace 11;
+        spawn-sh "$HOME/.config/niri/scripts/toggle-workspace-11.sh";
     }
     Mod+Shift+S repeat=false hotkey-overlay-title="Move Window to Workspace 11" {
         move-window-to-workspace 11;
