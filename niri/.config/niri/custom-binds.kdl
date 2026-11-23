@@ -1,4 +1,16 @@
 // User-owned binds loaded after the auto-generated DMS binds.
+
+recent-windows {
+    binds {
+        Alt+Tab {
+            next-window scope="workspace";
+        }
+        Alt+Shift+Tab {
+            previous-window scope="workspace";
+        }
+    }
+}
+
 binds {
     Mod+Space hotkey-overlay-title="Application Launcher" {
         spawn "dms" "ipc" "call" "spotlight" "toggle";
