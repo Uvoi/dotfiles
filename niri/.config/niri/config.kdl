@@ -339,6 +339,17 @@ window-rule {
     // block-out-from "screencast"
 }
 
+// Open regular windows as centered floats at a comfortable size.
+// New floating windows are centered by default in niri.
+window-rule {
+    open-floating true
+    open-maximized false
+    open-maximized-to-edges false
+    open-fullscreen false
+    default-column-width { proportion 0.8; }
+    default-window-height { proportion 0.8; }
+}
+
 // Rounded corners for all windows.
 window-rule {
     geometry-corner-radius 12
